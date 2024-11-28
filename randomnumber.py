@@ -13,4 +13,3 @@ def number_generation(level):
         attempts = 6
         st, end = 1, 50
     return number, attempts, st, end
-    print('helloworld')

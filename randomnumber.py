@@ -1,3 +1,4 @@
+from random import randint
 from math import log2
 def level(lvl):
     rand=number_generation(lvl)

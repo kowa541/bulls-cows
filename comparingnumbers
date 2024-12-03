@@ -1,0 +1,3 @@
+def compare_numbers(user_number, correct_number):
+    # Сравнивает введенное число с загаданным числом и возвращает TRUE или FALSE
+    return user_number == correct_number

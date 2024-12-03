@@ -10,7 +10,7 @@ def level(lvl):
     print(f'приветствуем на {lvl} уровне! \n{text[lvl-1]} заданный диапазон чисел {rand[2]}-{rand[3]}')
     for i in range(rand[1]):
         print(f'ваша {i+1} попытка из {rand[1]}')
-        result=trying(rand[0])
+        result=comparing(rand[0])
         if result:
             return True
     print('попытки закончились и вас затоптали насмерть:(\

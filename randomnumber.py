@@ -30,6 +30,27 @@ def number_generation(level):
         attempts = 6
         st, end = 1, 50
     return number, attempts, st, end
+def comparing(number):
+    while True:  
+        user_input = input("Введите число: ")
+
+        #На случай, если введено не целое число
+        try:
+            user_input = int(user_input)
+        except ValueError:
+            print("Ошибка: введено не целое число. Пожалуйста, введите целое число.") 
+            continue  
+
+        
+        if user_input < number:
+            print("Ваше число меньше загаданного.")
+            return False
+        elif user_input > number:
+            print("Ваше число больше загаданного.")
+            return False
+        else:
+            print("Ваше число равно загаданному.")
+            return True
 def defchoiceuser():
     choiceuser=None
     while choiceuser not in (0, 1):

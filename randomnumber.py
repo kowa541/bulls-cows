@@ -44,14 +44,13 @@ def comparing(number):
         
         if user_input < number:
             print("Ваше число меньше загаданного.")
+            return False
         elif user_input > number:
             print("Ваше число больше загаданного.")
+            return False
         else:
             print("Ваше число равно загаданному.")
-            break
-    else:
-        print("False")
-        return False
+            return True
 def defchoiceuser():
     choiceuser=None
     while choiceuser not in (0, 1):

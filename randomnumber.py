@@ -7,9 +7,9 @@ def level(lvl):
     \nОтгадайте число за 5 попыток, чтобы уклониться от птиц.', 
     'Вы устали и уже готовы быть затоптанным под десятком копыт,но вдалеке вы видите укрытие!\
     \nОтгадайте число за 6 попыток, чтобы укрыться от стада.']
-    print(f'приветствуем на {lvl} уровне! \n{text[lvl-1]} заданный диапазон чисел {rand[2]}-{rand[3]}')
+    print(f'приветствуем на {lvl} уровне! \n{text[lvl-1]} заданный диапазон чисел {rand[2]}-{rand[3]}\n')
     for i in range(rand[1]):
-        print(f'ваша {i+1} попытка из {rand[1]}')
+        print(f'{i+1} попытка из {rand[1]}')
         result=comparing(rand[0])
         if result:
             return True
@@ -31,36 +31,35 @@ def number_generation(level):
         st, end = 1, 50
     return number, attempts, st, end
 def comparing(number):
-    while True:  
-        user_input = input("Введите число: ")
-
+    while True: 
+        flag=True
+        user_input = input("Введите число ->  ")
         #На случай, если введено не целое число
         try:
             user_input = int(user_input)
         except ValueError:
-            print("Ошибка: введено не целое число. Пожалуйста, введите целое число.") 
-            continue  
-
-        
-        if user_input < number:
-            print("Ваше число меньше загаданного.")
-            return False
-        elif user_input > number:
-            print("Ваше число больше загаданного.")
-            return False
-        else:
-            print("Ваше число равно загаданному.")
-            return True
+            flag=False
+        if flag: break
+        print("Ошибка: введено не целое число. Пожалуйста, введите целое число.") 
+    if user_input < number:
+        print("Ваше число меньше загаданного.")
+        return False
+    elif user_input > number:
+        print("Ваше число больше загаданного.")
+        return False
+    else:
+        print("Ваше число равно загаданному.")
+        return True
 def defchoiceuser():
     choiceuser=None
     while choiceuser not in (0, 1):
         try:
             choiceuser=int(input('1-да 0-нет '))
         except:
-            print('вводите 0 или 1')
+            pass
     return choiceuser
 print('Приветствуем в игре Быки и коровы!\nВам не посчастливилось наткнуться на стадо разъяренных быков и коров :(\
-\nбегите и обходите препятствия, отгадывая числа!\n')
+\nБегите и обходите препятствия, отгадывая числа!\n')
 while True:
     for i in range(1, 4):
         if level(i):

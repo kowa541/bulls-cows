@@ -1,6 +1,15 @@
-from random import randint
+from random import choice
 def number_generation():
-    return randint(1000, 9999)
+    num=''
+    m=[1,2,3,4,5,6,7,8,9]
+    num+=str(choice(m))
+    m.remove(int(num[-1]))
+    m.append(0)
+    for i in range(3):
+        num+=str(choice(m))
+        m.remove(int(num[-1]))
+    return num
+    
 def comparing(number):
     while True:
         number=str(number)
@@ -8,20 +17,17 @@ def comparing(number):
             n=input('введите четырёхзначное целое число -> ')
             if n.lower().strip() =='нет':
                 return False
-            n=str(abs(int(n)))
+            n=str(int(n))
             if len(n)==4:
-                countbull, countcows=[], 0
+                countbull, countcows=0, 0
                 for i in range(4):
                     if number[i]==n[i]:
-                        countbull.append(i)
-                for i in range(4):
-                    for j in range(4):
-                        if n[i]==number[j] and i not in countbull and j not in countbull:
-                            countcows+=1
-                            break
-                if len(countbull)==4:
+                        countbull+=1
+                    elif n[i] in number:
+                        countcows+=1
+                if countbull==4:
                     return 'WIN'
-                print(f'в этом числе {len(countbull)} быков(-a) и {countcows} коров(-ы)\n')
+                print(f'в этом числе {countbull} быков(-a) и {countcows} коров(-ы)\n')
                 return int(n) 
         except:
             pass
@@ -59,5 +65,3 @@ while True:
     if not(key):
         print('Приходите ещё поиграть!')
         break
-
-    

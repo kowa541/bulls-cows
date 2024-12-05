@@ -5,9 +5,10 @@ def comparing(number):
     while True:
         number=str(number)
         try:
-            n=str(abs(int(input('введите четырёхзначное целое число -> '))))
-            if n.strip()=='0':
+            n=input('введите четырёхзначное целое число -> ')
+            if n.lower().strip() in ('0', 'нет'):
                 return False
+            n=str(abs(int(n)))
             if len(n)==4:
                 countbull, countcows=[], 0
                 for i in range(4):

@@ -14,7 +14,7 @@ def comparing(number):
     while True:
         number=str(number)
         try:
-            n=input('введите четырёхзначное целое число, состоящее из разных цифр -> ')
+            n=input('введите натуральное четырёхзначное число, состоящее из разных цифр -> ')
             if n.lower().strip() =='нет':
                 return False
             n=str(int(n))

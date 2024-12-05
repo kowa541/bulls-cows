@@ -6,7 +6,7 @@ def comparing(number):
         number=str(number)
         try:
             n=input('введите четырёхзначное целое число -> ')
-            if n.lower().strip() in =='нет':
+            if n.lower().strip() =='нет':
                 return False
             n=str(abs(int(n)))
             if len(n)==4:
